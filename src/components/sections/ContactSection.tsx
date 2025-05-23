@@ -177,11 +177,7 @@ export function ContactSection() {
                 <span>+254711108263</span>
               </div>
             </div>
-
-            <div className="mt-8 relative w-full h-64 md:h-80 rounded-lg overflow-hidden shadow-xl">
-                <Image src="https://placehold.co/500x350.png" alt="Abstract creative design" fill={true} style={{objectFit:"cover"}} data-ai-hint="abstract creative" />
-            </div>
-
+            {/* Removed placeholder image */}
           </motion.div>
         </div>
       </div>
