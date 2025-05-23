@@ -101,7 +101,7 @@ export function ContactSection() {
                  <div className="p-2.5 bg-accent/10 rounded-full group-hover:bg-accent transition-colors">
                   <Linkedin className="h-6 w-6 text-accent group-hover:text-accent-foreground transition-colors" />
                 </div>
-                <span>linkedin.com/in/samuel-kuria</span>
+                <span>linkedin.com/in/samuel-kuria-0594b7345</span>
               </Link>
 
               <Link href="https://github.com/Herceg-Samuel" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-3 group text-base md:text-lg transition-colors hover:text-accent">
@@ -129,7 +129,7 @@ export function ContactSection() {
                  <div className="p-2.5 bg-muted/50 rounded-full">
                   <Phone className="h-6 w-6 text-primary" />
                 </div>
-                <span>+1 (555) 123-4567 (Demo)</span>
+                <span>+254711108263</span>
               </div>
             </div>
 
@@ -143,3 +143,4 @@ export function ContactSection() {
     </section>
   );
 }
+
