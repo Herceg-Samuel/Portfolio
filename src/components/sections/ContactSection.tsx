@@ -10,7 +10,6 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Mail, Linkedin, Github, Send, Phone, Twitter, Instagram, Loader2 } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
 import { useToast } from "@/hooks/use-toast";
 
 
@@ -125,7 +124,7 @@ export function ContactSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-            className="space-y-8 pt-4 lg:pt-0"
+            className="space-y-6 pt-4 lg:pt-0"
           >
             <div>
               <h3 className="text-2xl font-semibold text-primary mb-4">Contact Information</h3>
@@ -134,40 +133,12 @@ export function ContactSection() {
               </p>
             </div>
             
-            <div className="space-y-4">
-              <Link href="mailto:samuel.kuria.dev@example.com" className="flex items-center space-x-3 group text-base md:text-lg transition-colors hover:text-accent">
+            <div className="space-y-5">
+              <Link href="mailto:iamsamuelkuria@gmail.com" className="flex items-center space-x-3 group text-base md:text-lg transition-colors hover:text-accent">
                 <div className="p-2.5 bg-accent/10 rounded-full group-hover:bg-accent transition-colors">
                   <Mail className="h-6 w-6 text-accent group-hover:text-accent-foreground transition-colors" />
                 </div>
-                <span>samuel.kuria.dev@example.com</span>
-              </Link>
-
-              <Link href="https://www.linkedin.com/in/samuel-kuria-0594b7345" target="_blank" rel="noopener noreferrer" className="flex items-center group text-base md:text-lg transition-colors hover:text-accent">
-                 <div className="p-2.5 bg-accent/10 rounded-full group-hover:bg-accent transition-colors">
-                  <Linkedin className="h-6 w-6 text-accent group-hover:text-accent-foreground transition-colors" />
-                </div>
-                {/* <span>linkedin.com/in/samuel-kuria-0594b7345</span> */}
-              </Link>
-
-              <Link href="https://github.com/Herceg-Samuel" target="_blank" rel="noopener noreferrer" className="flex items-center group text-base md:text-lg transition-colors hover:text-accent">
-                 <div className="p-2.5 bg-accent/10 rounded-full group-hover:bg-accent transition-colors">
-                  <Github className="h-6 w-6 text-accent group-hover:text-accent-foreground transition-colors" />
-                </div>
-                {/* <span>github.com/Herceg-Samuel</span> */}
-              </Link>
-              
-              <Link href="https://x.com/iamsamuelkuria" target="_blank" rel="noopener noreferrer" className="flex items-center group text-base md:text-lg transition-colors hover:text-accent">
-                 <div className="p-2.5 bg-accent/10 rounded-full group-hover:bg-accent transition-colors">
-                  <Twitter className="h-6 w-6 text-accent group-hover:text-accent-foreground transition-colors" />
-                </div>
-                {/* <span>x.com/iamsamuelkuria</span> */}
-              </Link>
-
-              <Link href="https://www.instagram.com/herceg_samuel/" target="_blank" rel="noopener noreferrer" className="flex items-center group text-base md:text-lg transition-colors hover:text-accent">
-                 <div className="p-2.5 bg-accent/10 rounded-full group-hover:bg-accent transition-colors">
-                  <Instagram className="h-6 w-6 text-accent group-hover:text-accent-foreground transition-colors" />
-                </div>
-                {/* <span>instagram.com/herceg_samuel</span> */}
+                <span>iamsamuelkuria@gmail.com</span>
               </Link>
               
               <div className="flex items-center space-x-3 group text-base md:text-lg text-foreground/90">
@@ -176,6 +147,35 @@ export function ContactSection() {
                 </div>
                 <span>+254711108263</span>
               </div>
+
+              <div className="pt-2">
+                <p className="text-sm text-muted-foreground mb-3">Or connect on social media:</p>
+                <div className="flex items-center space-x-4">
+                  <Link href="https://www.linkedin.com/in/samuel-kuria-0594b7345" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" className="group">
+                    <div className="p-2.5 bg-accent/10 rounded-full group-hover:bg-accent transition-colors duration-200 ease-in-out transform group-hover:scale-110">
+                      <Linkedin className="h-6 w-6 text-accent group-hover:text-accent-foreground transition-colors" />
+                    </div>
+                  </Link>
+
+                  <Link href="https://github.com/Herceg-Samuel" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" className="group">
+                    <div className="p-2.5 bg-accent/10 rounded-full group-hover:bg-accent transition-colors duration-200 ease-in-out transform group-hover:scale-110">
+                      <Github className="h-6 w-6 text-accent group-hover:text-accent-foreground transition-colors" />
+                    </div>
+                  </Link>
+                  
+                  <Link href="https://x.com/iamsamuelkuria" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter) Profile" className="group">
+                    <div className="p-2.5 bg-accent/10 rounded-full group-hover:bg-accent transition-colors duration-200 ease-in-out transform group-hover:scale-110">
+                      <Twitter className="h-6 w-6 text-accent group-hover:text-accent-foreground transition-colors" />
+                    </div>
+                  </Link>
+
+                  <Link href="https://www.instagram.com/herceg_samuel/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Profile" className="group">
+                    <div className="p-2.5 bg-accent/10 rounded-full group-hover:bg-accent transition-colors duration-200 ease-in-out transform group-hover:scale-110">
+                      <Instagram className="h-6 w-6 text-accent group-hover:text-accent-foreground transition-colors" />
+                    </div>
+                  </Link>
+                </div>
+              </div>
             </div>
           </motion.div>
         </div>
@@ -183,4 +183,3 @@ export function ContactSection() {
     </section>
   );
 }
-
