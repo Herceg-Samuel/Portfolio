@@ -1,12 +1,14 @@
+
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Mail, Linkedin, Github, Send, Phone, Twitter, Instagram } from "lucide-react";
+import { Mail, Linkedin, Github, Send, Phone, Twitter, Instagram, Loader2 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { useToast } from "@/hooks/use-toast";
@@ -14,16 +16,54 @@ import { useToast } from "@/hooks/use-toast";
 
 export function ContactSection() {
   const { toast } = useToast();
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleFormSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    // This is a dummy handler for a static site.
-    // In a real app, you'd integrate with an email service or backend.
-    toast({
-      title: "Message Sent (Demo)",
-      description: "Thank you for your message! This is a demo form.",
-    });
-    (event.target as HTMLFormElement).reset();
+    setIsLoading(true);
+
+    const formData = new FormData(event.target as HTMLFormElement);
+    const data = {
+      name: formData.get("name") as string,
+      email: formData.get("email") as string,
+      message: formData.get("message") as string,
+    };
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        toast({
+          title: "Message Sent!",
+          description: "Thank you for your message. I'll get back to you soon.",
+          variant: "default",
+        });
+        (event.target as HTMLFormElement).reset();
+      } else {
+        toast({
+          title: "Error Sending Message",
+          description: result.message || "An unknown error occurred. Please try again.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      console.error("Contact form submission error:", error);
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please check your connection and try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -57,18 +97,23 @@ export function ContactSection() {
                 <form onSubmit={handleFormSubmit} className="space-y-6">
                   <div>
                     <Label htmlFor="name" className="text-base">Full Name</Label>
-                    <Input id="name" type="text" placeholder="Your Name" required className="mt-2 text-base"/>
+                    <Input id="name" name="name" type="text" placeholder="Your Name" required className="mt-2 text-base"/>
                   </div>
                   <div>
                     <Label htmlFor="email" className="text-base">Email Address</Label>
-                    <Input id="email" type="email" placeholder="your.email@example.com" required className="mt-2 text-base"/>
+                    <Input id="email" name="email" type="email" placeholder="your.email@example.com" required className="mt-2 text-base"/>
                   </div>
                   <div>
                     <Label htmlFor="message" className="text-base">Message</Label>
-                    <Textarea id="message" placeholder="Your message here..." rows={5} required className="mt-2 text-base"/>
+                    <Textarea id="message" name="message" placeholder="Your message here..." rows={5} required className="mt-2 text-base"/>
                   </div>
-                  <Button type="submit" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground text-lg py-3">
-                    <Send className="mr-2 h-5 w-5" /> Send Message
+                  <Button type="submit" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground text-lg py-3" disabled={isLoading}>
+                    {isLoading ? (
+                      <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                    ) : (
+                      <Send className="mr-2 h-5 w-5" />
+                    )}
+                    {isLoading ? "Sending..." : "Send Message"}
                   </Button>
                 </form>
               </CardContent>
@@ -143,4 +188,3 @@ export function ContactSection() {
     </section>
   );
 }
-
