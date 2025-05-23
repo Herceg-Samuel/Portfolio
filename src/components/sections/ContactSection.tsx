@@ -150,7 +150,7 @@ export function ContactSection() {
 
               <div className="pt-2">
                 <p className="text-sm text-muted-foreground mb-3">Or connect on social media:</p>
-                <div className="flex items-center space-x-4">
+                <div className="flex items-center space-x-4 lg:flex-col lg:items-end lg:space-y-4 lg:space-x-0">
                   <Link href="https://www.linkedin.com/in/samuel-kuria-0594b7345" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" className="group">
                     <div className="p-2.5 bg-accent/10 rounded-full group-hover:bg-accent transition-colors duration-200 ease-in-out transform group-hover:scale-110">
                       <Linkedin className="h-6 w-6 text-accent group-hover:text-accent-foreground transition-colors" />
