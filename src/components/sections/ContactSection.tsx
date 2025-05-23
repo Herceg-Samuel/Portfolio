@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Mail, Linkedin, Github, Send, Phone } from "lucide-react";
+import { Mail, Linkedin, Github, Send, Phone, Twitter, Instagram } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { useToast } from "@/hooks/use-toast";
@@ -97,18 +97,32 @@ export function ContactSection() {
                 <span>samuel.kuria.dev@example.com</span>
               </Link>
 
-              <Link href="https://www.linkedin.com/in/samuelkuria-dev" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-3 group text-base md:text-lg transition-colors hover:text-accent">
+              <Link href="https://www.linkedin.com/in/samuel-kuria-0594b7345" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-3 group text-base md:text-lg transition-colors hover:text-accent">
                  <div className="p-2.5 bg-accent/10 rounded-full group-hover:bg-accent transition-colors">
                   <Linkedin className="h-6 w-6 text-accent group-hover:text-accent-foreground transition-colors" />
                 </div>
-                <span>linkedin.com/in/samuelkuria-dev</span>
+                <span>linkedin.com/in/samuel-kuria</span>
               </Link>
 
-              <Link href="https://github.com/samuelkuria-dev" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-3 group text-base md:text-lg transition-colors hover:text-accent">
+              <Link href="https://github.com/Herceg-Samuel" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-3 group text-base md:text-lg transition-colors hover:text-accent">
                  <div className="p-2.5 bg-accent/10 rounded-full group-hover:bg-accent transition-colors">
                   <Github className="h-6 w-6 text-accent group-hover:text-accent-foreground transition-colors" />
                 </div>
-                <span>github.com/samuelkuria-dev</span>
+                <span>github.com/Herceg-Samuel</span>
+              </Link>
+              
+              <Link href="https://x.com/iamsamuelkuria" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-3 group text-base md:text-lg transition-colors hover:text-accent">
+                 <div className="p-2.5 bg-accent/10 rounded-full group-hover:bg-accent transition-colors">
+                  <Twitter className="h-6 w-6 text-accent group-hover:text-accent-foreground transition-colors" />
+                </div>
+                <span>x.com/iamsamuelkuria</span>
+              </Link>
+
+              <Link href="https://www.instagram.com/herceg_samuel/" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-3 group text-base md:text-lg transition-colors hover:text-accent">
+                 <div className="p-2.5 bg-accent/10 rounded-full group-hover:bg-accent transition-colors">
+                  <Instagram className="h-6 w-6 text-accent group-hover:text-accent-foreground transition-colors" />
+                </div>
+                <span>instagram.com/herceg_samuel</span>
               </Link>
               
               <div className="flex items-center space-x-3 group text-base md:text-lg text-foreground/90">
