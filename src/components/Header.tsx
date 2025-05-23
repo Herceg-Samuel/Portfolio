@@ -1,18 +1,24 @@
+
 "use client";
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { HomeIcon, UserCircle, Briefcase, Mail, MountainSnow } from "lucide-react";
-import { Button } from "./ui/button"; // For potential mobile menu
+import { HomeIcon, UserCircle, Briefcase, Mail, MountainSnow, Zap, Menu as MenuIcon } from "lucide-react"; // Added Zap and MenuIcon
+import { Button } from "./ui/button";
+import { Sheet, SheetContent, SheetTrigger, SheetClose } from "./ui/sheet"; // For mobile menu
+import { useState } from "react";
 
 const navItems = [
   { name: "Home", href: "#home", icon: <HomeIcon size={18} /> },
   { name: "About", href: "#about", icon: <UserCircle size={18} /> },
+  { name: "Skills", href: "#skills", icon: <Zap size={18} /> },
   { name: "Projects", href: "#projects", icon: <Briefcase size={18} /> },
   { name: "Contact", href: "#contact", icon: <Mail size={18} /> },
 ];
 
 export function Header() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   return (
     <motion.header
       initial={{ y: -100, opacity: 0 }}
@@ -41,9 +47,31 @@ export function Header() {
               </Link>
             ))}
           </nav>
-          {/* Placeholder for Mobile Menu Trigger */}
           <div className="md:hidden">
-            {/* Example: <Button variant="ghost" size="icon"><MenuIcon /></Button> */}
+            <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon">
+                  <MenuIcon />
+                  <span className="sr-only">Open menu</span>
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-[280px] p-6 bg-background">
+                <div className="flex flex-col space-y-6 mt-8">
+                  {navItems.map((item) => (
+                    <SheetClose key={item.name} asChild>
+                      <Link
+                        href={item.href}
+                        className="flex items-center space-x-3 py-2 text-lg font-medium text-foreground hover:text-accent transition-colors"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        {item.icon}
+                        <span>{item.name}</span>
+                      </Link>
+                    </SheetClose>
+                  ))}
+                </div>
+              </SheetContent>
+            </Sheet>
           </div>
         </div>
       </div>
