@@ -3,10 +3,11 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { HomeIcon, UserCircle, Briefcase, Mail, MountainSnow, Zap, Menu as MenuIcon } from "lucide-react"; // Added Zap and MenuIcon
+import { HomeIcon, UserCircle, Briefcase, Mail, MountainSnow, Zap, Menu as MenuIcon } from "lucide-react";
 import { Button } from "./ui/button";
-import { Sheet, SheetContent, SheetTrigger, SheetClose } from "./ui/sheet"; // For mobile menu
+import { Sheet, SheetContent, SheetTrigger, SheetClose } from "./ui/sheet";
 import { useState } from "react";
+import { ThemeToggleButton } from "./ThemeToggleButton"; // Added import
 
 const navItems = [
   { name: "Home", href: "#home", icon: <HomeIcon size={18} /> },
@@ -32,46 +33,56 @@ export function Header() {
               <MountainSnow className="h-8 w-8 text-primary" />
               <span>Samuel Kuria</span>
           </Link>
-          <nav className="hidden md:flex items-center space-x-4 lg:space-x-6">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="relative px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors group"
-              >
-                <span className="flex items-center space-x-1.5">
-                  {item.icon}
-                  <span>{item.name}</span>
-                </span>
-                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out"></span>
-              </Link>
-            ))}
-          </nav>
-          <div className="md:hidden">
-            <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
-              <SheetTrigger asChild>
-                <Button variant="ghost" size="icon">
-                  <MenuIcon />
-                  <span className="sr-only">Open menu</span>
-                </Button>
-              </SheetTrigger>
-              <SheetContent side="right" className="w-[280px] p-6 bg-background">
-                <div className="flex flex-col space-y-6 mt-8">
-                  {navItems.map((item) => (
-                    <SheetClose key={item.name} asChild>
-                      <Link
-                        href={item.href}
-                        className="flex items-center space-x-3 py-2 text-lg font-medium text-foreground hover:text-accent transition-colors"
-                        onClick={() => setIsMobileMenuOpen(false)}
-                      >
-                        {item.icon}
-                        <span>{item.name}</span>
-                      </Link>
-                    </SheetClose>
-                  ))}
-                </div>
-              </SheetContent>
-            </Sheet>
+          
+          <div className="flex items-center space-x-2 md:space-x-4">
+            <nav className="hidden md:flex items-center space-x-4 lg:space-x-6">
+              {navItems.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="relative px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors group"
+                >
+                  <span className="flex items-center space-x-1.5">
+                    {item.icon}
+                    <span>{item.name}</span>
+                  </span>
+                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out"></span>
+                </Link>
+              ))}
+            </nav>
+
+            <ThemeToggleButton />
+
+            <div className="md:hidden">
+              <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
+                <SheetTrigger asChild>
+                  <Button variant="ghost" size="icon">
+                    <MenuIcon />
+                    <span className="sr-only">Open menu</span>
+                  </Button>
+                </SheetTrigger>
+                <SheetContent side="right" className="w-[280px] p-6 bg-background">
+                  <div className="flex flex-col space-y-6 mt-8">
+                    {navItems.map((item) => (
+                      <SheetClose key={item.name} asChild>
+                        <Link
+                          href={item.href}
+                          className="flex items-center space-x-3 py-2 text-lg font-medium text-foreground hover:text-accent transition-colors"
+                          onClick={() => setIsMobileMenuOpen(false)}
+                        >
+                          {item.icon}
+                          <span>{item.name}</span>
+                        </Link>
+                      </SheetClose>
+                    ))}
+                    <div className="pt-4 border-t border-border">
+                       <p className="text-sm text-muted-foreground mb-2">Theme</p>
+                       <ThemeToggleButton />
+                    </div>
+                  </div>
+                </SheetContent>
+              </Sheet>
+            </div>
           </div>
         </div>
       </div>
