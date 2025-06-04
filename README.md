@@ -1,5 +1,5 @@
-# Firebase Studio
+This is a portfolio made with love.
 
-This is a NextJS built portfolio.
+It showcases my sy passion and skills.
 
-Made with dedication, a lot of experimentation and love.
+Feel free to contact me.

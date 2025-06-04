@@ -32,7 +32,7 @@ export function AboutMeSection() {
             className="space-y-6 text-base md:text-lg text-foreground/90 leading-relaxed max-w-2xl text-center md:text-left"
           >
             <div className="relative w-40 h-40 md:w-48 md:h-48 mx-auto rounded-full overflow-hidden shadow-2xl mb-8 border-4 border-primary bg-muted">
-              <Image src="https://placehold.co/300x300.png" alt="Samuel Kuria" fill={true} style={{objectFit:"cover"}} data-ai-hint="portrait developer" />
+              <Image src="/images/samuel.jpg" alt="Samuel Kuria" fill={true} style={{objectFit:"cover"}} data-ai-hint="portrait developer" />
             </div>
             <p>
               I&apos;m Samuel Kuria, a junior web developer with a deep fascination for the human mind and the timeless questions of philosophy. This curiosity extends to my love for creative writing, especially poetry, where I explore ideas and emotions.
