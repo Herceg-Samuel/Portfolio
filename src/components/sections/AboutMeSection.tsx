@@ -5,8 +5,6 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 export function AboutMeSection() {
-  const defaultInterests = "psychology, philosophy, poetry, web development, React, Next.js, Node.js, MongoDB, SQL, Firebase";
-
   return (
     <section id="about" className="py-20 lg:py-28 bg-muted/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-screen-xl">
@@ -35,13 +33,16 @@ export function AboutMeSection() {
               <Image src="/images/samuel.jpg" alt="Samuel Kuria" fill={true} style={{objectFit:"cover"}} data-ai-hint="portrait developer" />
             </div>
             <p>
-              I&apos;m Samuel Kuria, a junior web developer with a deep fascination for the human mind and the timeless questions of philosophy. This curiosity extends to my love for creative writing, especially poetry, where I explore ideas and emotions.
+              Hey there! I&apos;m Samuel Kuria — web developer by day, armchair philosopher by night, and aspiring poet somewhere in between. I spend most of my time wrangling <strong className="text-primary font-semibold">React</strong> components, experimenting with <strong className="text-primary font-semibold">Next.js</strong>, and occasionally having deep existential conversations with my terminal.
             </p>
             <p>
-              In the world of technology, I&apos;m enthusiastic about building intuitive and engaging web experiences. I&apos;m proficient in frontend technologies like <strong className="text-primary font-semibold">React</strong> and <strong className="text-primary font-semibold">Next.js</strong>, and comfortable working with backend systems using <strong className="text-primary font-semibold">Node.js</strong>. My database experience includes both <strong className="text-primary font-semibold">MongoDB</strong> and <strong className="text-primary font-semibold">SQL</strong>, and I&apos;ve leveraged <strong className="text-primary font-semibold">Firebase</strong> for rapid development and deployment.
+              My toolbox includes <strong className="text-primary font-semibold">Node.js</strong>, <strong className="text-primary font-semibold">MongoDB</strong>, <strong className="text-primary font-semibold">SQL</strong>, and <strong className="text-primary font-semibold">Firebase</strong> — or as I like to call it, the full-stack survival kit. But I&apos;m not just here to build shiny UIs; I&apos;m here to craft digital experiences that feel intuitive, human, and maybe even a little meaningful.
             </p>
             <p>
-              I believe that technology can be a powerful tool for expression and connection, and I&apos;m always eager to learn new things and take on challenging projects that allow me to grow both as a developer and as an individual. My interests also include: <span className="italic text-foreground/70">{defaultInterests}</span>.
+              When I&apos;m not coding, you&apos;ll find me lost in thought about consciousness, scribbling poems that may or may not make sense, or reading something that completely rewires my brain (in the best way). I believe good tech — like good writing — should bring people closer together.
+            </p>
+            <p>
+              That&apos;s what I&apos;m here to build, one thoughtful project at a time.
             </p>
           </motion.div>
         </div>
