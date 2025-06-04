@@ -24,6 +24,14 @@
 .DS_Store
 *.pem
 
+# folders
+.idx/
+.vscode/
+docs/
+.modified/
+apphosting.yaml/
+
+
 # debug
 npm-debug.log*
 yarn-debug.log*
