@@ -19,7 +19,6 @@ export const projectsData: Project[] = [
     imageAiHint: "poetry community",
     technologies: ["Next.js", "React", "Firebase", "Tailwind CSS"],
     liveLink: "#",
-    repoLink: "#",
   },
   {
     id: "project-2",
@@ -37,7 +36,7 @@ export const projectsData: Project[] = [
     imageUrl: "https://placehold.co/600x400.png",
     imageAiHint: "debate forum",
     technologies: ["Node.js", "SQL", "Handlebars.js", "Socket.io"],
-    repoLink: "#",
+    liveLink: "#",
   },
   {
     id: "project-4",
@@ -47,6 +46,5 @@ export const projectsData: Project[] = [
     imageAiHint: "developer portfolio",
     technologies: ["HTML", "CSS", "JavaScript", "React"],
     liveLink: "#",
-    repoLink: "#",
   },
 ];

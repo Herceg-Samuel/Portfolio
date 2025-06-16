@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Mail, Linkedin, Github, Send, Phone, Twitter, Instagram, Loader2 } from "lucide-react";
+import { Mail, Linkedin, Send, Phone, Twitter, Instagram, Loader2 } from "lucide-react";
 import Link from "next/link";
 import { useToast } from "@/hooks/use-toast";
 
@@ -154,12 +154,6 @@ export function ContactSection() {
                   <Link href="https://www.linkedin.com/in/samuel-kuria-0594b7345" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" className="group">
                     <div className="p-2.5 bg-accent/10 rounded-full group-hover:bg-accent transition-colors duration-200 ease-in-out transform group-hover:scale-110">
                       <Linkedin className="h-6 w-6 text-accent group-hover:text-accent-foreground transition-colors" />
-                    </div>
-                  </Link>
-
-                  <Link href="https://github.com/Herceg-Samuel" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" className="group">
-                    <div className="p-2.5 bg-accent/10 rounded-full group-hover:bg-accent transition-colors duration-200 ease-in-out transform group-hover:scale-110">
-                      <Github className="h-6 w-6 text-accent group-hover:text-accent-foreground transition-colors" />
                     </div>
                   </Link>
                   

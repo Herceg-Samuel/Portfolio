@@ -6,22 +6,21 @@ import { Zap } from "lucide-react";
 
 interface Skill {
   name: string;
-  level: "Advanced" | "Intermediate" | "Beginner" | "Proficient";
 }
 
 const skillsList: Skill[] = [
-  { name: "React", level: "Advanced" },
-  { name: "Next.js", level: "Intermediate" },
-  { name: "Tailwind CSS", level: "Advanced" },
-  { name: "JavaScript", level: "Advanced" },
-  { name: "TypeScript", level: "Intermediate" },
-  { name: "Node.js", level: "Intermediate" },
-  { name: "MongoDB", level: "Intermediate" },
-  { name: "SQL", level: "Intermediate" },
-  { name: "Git", level: "Advanced" },
-  { name: "Firebase", level: "Intermediate" },
-  { name: "Framer Motion", level: "Intermediate" },
-  { name: "Genkit", level: "Beginner" },
+  { name: "React" },
+  { name: "Next.js" },
+  { name: "Tailwind CSS" },
+  { name: "JavaScript" },
+  { name: "TypeScript" },
+  { name: "Node.js" },
+  { name: "MongoDB"},
+  { name: "SQL" },
+  { name: "Git" },
+  { name: "Firebase" },
+  { name: "Framer Motion" },
+  { name: "Genkit" },
 ];
 
 const sectionVariants = {
@@ -97,7 +96,6 @@ export function SkillsSection() {
               </div>
               <p className="text-sm text-muted-foreground" style={{ marginLeft: `calc(22px + 0.75rem)` }}> 
                 {/* 22px for icon width, 0.75rem for mr-3 */}
-                {skill.level}
               </p>
             </motion.div>
           ))}
